@@ -20,7 +20,7 @@ app.use(express.json()); // application/json
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use(compression());
+// app.use(compression());
 app.use(cors());
 // app.options("*", cors());
 
