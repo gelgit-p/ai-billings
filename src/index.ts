@@ -10,6 +10,7 @@ import isAuth from "./middlewares/isAuth";
 import authorise from './middlewares/authorise';
 import adminRoutes from "./routes/v1/admin";
 import authRoutes from "./routes/v1/auth";
+import dexRoutes from "./routes/v1/dex";
 
 const app = express();
 
@@ -27,7 +28,8 @@ app.use(cors());
 app.use(limiter);
 
 app.use("/api/v1", authRoutes);
-app.use("/api/v1", isAuth, authorise(false, "user"), adminRoutes);
+app.use("/api/v1", dexRoutes);
+// app.use("/api/v1", isAuth, authorise(false, "user"), adminRoutes);
 
 const PORT = process.env.PORT || 8080;
 
